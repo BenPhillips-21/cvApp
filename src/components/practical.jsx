@@ -42,9 +42,16 @@ function WorkHistory({ works, setWorks, business, setBusiness, jobTitle, setJobT
           startWorkDate: hiddenArray[i][3],
           endWorkDate: hiddenArray[i][4]
         };
-        setWorks([...works, newWork]);
+        const targetIndex = hiddenArray[i][5];
+        const newWorks = [...works];
+        if (hiddenArray[i][5] === 0) {
+          newWorks.unshift(newWork);
+        } else {
+          newWorks.splice(targetIndex, 0, newWork);
+        }
+        setWorks(newWorks);        
         setHiddenArray((prevHiddenArray) =>
-        prevHiddenArray.filter((item, index) => index !== i)
+        prevHiddenArray.filter((item, id) => id !== i)
       );
       }
     }
@@ -57,14 +64,14 @@ function WorkHistory({ works, setWorks, business, setBusiness, jobTitle, setJobT
     let c = targetWork.responsibilities
     let d = targetWork.startWorkDate
     let e = targetWork.endWorkDate
-    let newHiddenArray = ([a, b, c, d, e])
+    const index = works.indexOf(targetWork);
+    console.log(index)
+    let newHiddenArray = ([a, b, c, d, e, index])
     setHiddenArray((prevHiddenArray) => [...prevHiddenArray, newHiddenArray])
     setWorks((prevWorks) => prevWorks.filter((work) => work.id !== id));
   }
 
   const editWork = (id) => {
-    console.log(id)
-
     const targetWork = works.find((work) => work.id === id);
   
     if (targetWork) {
@@ -82,23 +89,24 @@ function WorkHistory({ works, setWorks, business, setBusiness, jobTitle, setJobT
     }
   }
 
-
   if (workStatus === 0) {
     return (
       <>
-        {hiddenArray.map((hiddenItem, index) => (
-          <div key={hiddenItem[0]}>
-            <button>{hiddenItem[0]}</button>
-            <button onClick={() => unHide(hiddenItem[0])}>Unhide</button>
-          </div>
-            ))}
-        {works.map((work) => (
-          <div key={work.id}>
-            <button onClick={() => editWork(work.id)}>{work.business}</button>
-            <button onClick={() => remove(work.id)}>Delete</button>
-            <button onClick={() => hide(work.id)}>Hide</button>
-          </div>
-        ))}
+        {hiddenArray.length > 0 && <h4>Hidden</h4>}
+          {hiddenArray.map((hiddenItem) => (
+            <div key={hiddenItem[0]}>
+              <button>{hiddenItem[0]}</button>
+              <button onClick={() => unHide(hiddenItem[0])}>Unhide</button>
+            </div>
+              ))}
+        {hiddenArray.length > 0 && <h4>Visible</h4>}
+          {works.map((work) => (
+            <div key={work.id}>
+              <button onClick={() => editWork(work.id)}>{work.business}</button>
+              <button onClick={() => remove(work.id)}>Delete</button>
+              <button onClick={() => hide(work.id)}>Hide</button>
+            </div>
+          ))}
         <button onClick={addMore}>+ Work</button>
       </>
     );

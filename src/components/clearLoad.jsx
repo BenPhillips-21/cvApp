@@ -25,6 +25,27 @@ function ClearLoad({ works, setWorks, business, setBusiness, jobTitle, setJobTit
     }
 
     function handleLoad() {
+        setWorks([]);
+        setBusiness('');
+        setJobTitle('');
+        setResponsibilities('');
+        setStartWorkDate('');
+        setEndWorkDate('');
+        setWorkStatus(0);
+        setState(0); // replace with the initial value for state
+        setLocation(''); // replace with the initial value for location
+        setName('');
+        setTitle('');
+        setEmail('');
+        setNumber('');
+        setStatus(false);
+        setEducations([]); // replace with the initial value for educations
+        setSchool('');
+        setDegree('');
+        setSchoolLocation('');
+        setStartDate('');
+        setEndDate(''); 
+
         setBusiness('DeployPartners');
         setJobTitle('Software Development Intern');
         setResponsibilities('Developed a React-based dashboard application.');
