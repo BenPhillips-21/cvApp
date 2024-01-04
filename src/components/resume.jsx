@@ -18,25 +18,41 @@ export default function Resume({ works, business, jobTitle, responsibilities, st
             </div>
         </div>
     </div>
-    <div className = 'education-container'>
-        <h1>Education</h1>
-        {educations.map((education, index) => (
-        <div key={index}>
-            <h3>{education.school}</h3>
-                <p>{education.degree}</p>
-                <p>{education.schoolLocation}</p>
-                <p>Start Date: {education.startDate}</p>
-                <p>End Date: {education.endDate}</p>
+    <div className='education-container'>
+        <div className='education-heading'>
+            <h1>Education</h1>
         </div>
+        {educations.map((education, index) => (
+            <div key={index} className='education-info'>
+            <div className='education-info-group'>
+                <div className='dates-container'>
+                    <p>{education.startDate} - {education.endDate}</p>
+                </div>
+                <p>{education.schoolLocation}</p>
+            </div>
+            <div className='education-info-group'>
+                <p style={{ fontSize: '24px', fontWeight: '700', marginBottom: '-8px', marginTop: '16px' }}>{education.school}</p>
+                <p>{education.degree}</p>
+            </div>
+            </div>
         ))}
-        <p>{school}</p>
-        <p>{degree}</p>
-        <p>{schoolLocation}</p>
-        <p>{startDate}</p>
-        <p>{endDate}</p>
-    </div>
-    <div className = 'workhistory-container'>
+        <div className='education-info'>
+            <div className='education-info-group'>
+            <div className='dates-container'>
+                <p>{startDate} - {endDate}</p>
+            </div>
+            <p>{schoolLocation}</p>
+            </div>
+            <div className='education-info-group'>
+            <p style={{ fontSize: '24px', fontWeight: '700', marginBottom: '-8px', marginTop: '16px' }}>{school}</p>
+            <p>{degree}</p>
+            </div>
+        </div>
+        </div>
+    <div className = 'education-container'>
+    <div className = 'education-heading'>
         <h1>Professional Experience</h1>
+    </div>
         {works.map((work, index) => (
           <div key={index}>
             <h3>{work.business}</h3>
