@@ -3,8 +3,9 @@
     flex-direction: column; /* Stack items vertically */
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */        
-    background-color: purple;
+    background-color: #0e374e;
     height: 160px; /* Adjust the height to your desired value */
+    color: white;
 }
 .header {
     text-align: center;

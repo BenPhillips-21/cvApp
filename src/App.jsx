@@ -30,14 +30,16 @@ function App() {
   const [responsibilities, setResponsibilities] = useState('');
   const [startWorkDate, setStartWorkDate] = useState('');
   const [endWorkDate, setEndWorkDate] = useState('');
+  const [jobLocation, setJobLocation] = useState('');
   const [workStatus, setWorkStatus] = useState(0);
 
   return (
     <>
     <div className="papa-container">
+    <div className="container-container">
     <div className="app-container">
       <div className="section">
-      <ClearLoad works={works} setWorks={setWorks} business={business} setBusiness={setBusiness} jobTitle={jobTitle} setJobTitle={setJobTitle} responsibilities={responsibilities} setResponsibilities={setResponsibilities} startWorkDate={startWorkDate} setStartWorkDate={setStartWorkDate} endWorkDate={endWorkDate} setEndWorkDate={setEndWorkDate} workStatus={workStatus} setWorkStatus={setWorkStatus} state={state} setState={setState} location={location} setLocation={setLocation} name={name} setName={setName} title={title} setTitle={setTitle} email={email} setEmail={setEmail} number={number} setNumber={setNumber} status={status} setStatus={setStatus} educations={educations} setEducations={setEducations} school={school} setSchool={setSchool} degree={degree} setDegree={setDegree} schoolLocation={schoolLocation} setSchoolLocation={setSchoolLocation} startDate={startDate} setStartDate={setStartDate} endDate={endDate} setEndDate={setEndDate} />
+      <ClearLoad jobLocation={jobLocation} setJobLocation={setJobLocation} works={works} setWorks={setWorks} business={business} setBusiness={setBusiness} jobTitle={jobTitle} setJobTitle={setJobTitle} responsibilities={responsibilities} setResponsibilities={setResponsibilities} startWorkDate={startWorkDate} setStartWorkDate={setStartWorkDate} endWorkDate={endWorkDate} setEndWorkDate={setEndWorkDate} workStatus={workStatus} setWorkStatus={setWorkStatus} state={state} setState={setState} location={location} setLocation={setLocation} name={name} setName={setName} title={title} setTitle={setTitle} email={email} setEmail={setEmail} number={number} setNumber={setNumber} status={status} setStatus={setStatus} educations={educations} setEducations={setEducations} school={school} setSchool={setSchool} degree={degree} setDegree={setDegree} schoolLocation={schoolLocation} setSchoolLocation={setSchoolLocation} startDate={startDate} setStartDate={setStartDate} endDate={endDate} setEndDate={setEndDate} />
       </div>
       <div className="section">
         <GeneralInfo location={location} setLocation={setLocation} name={name} setName={setName} title={title} setTitle={setTitle} email={email} setEmail={setEmail} number={number} setNumber={setNumber} status={status} setStatus={setStatus} />
@@ -46,11 +48,12 @@ function App() {
         <EducationHistory state={state} setState={setState} educations={educations} setEducations={setEducations} school={school} setSchool={setSchool} degree={degree} setDegree={setDegree} schoolLocation={schoolLocation} setSchoolLocation={setSchoolLocation} startDate={startDate} setStartDate={setStartDate} endDate={endDate} setEndDate={setEndDate} />
       </div>
       <div className="section">
-        <WorkHistory works={works} setWorks={setWorks} business={business} setBusiness={setBusiness} jobTitle={jobTitle} setJobTitle={setJobTitle} responsibilities={responsibilities} setResponsibilities={setResponsibilities} startWorkDate={startWorkDate} setStartWorkDate={setStartWorkDate} endWorkDate={endWorkDate} setEndWorkDate={setEndWorkDate} workStatus={workStatus} setWorkStatus={setWorkStatus}/>
+        <WorkHistory jobLocation={jobLocation} setJobLocation={setJobLocation} works={works} setWorks={setWorks} business={business} setBusiness={setBusiness} jobTitle={jobTitle} setJobTitle={setJobTitle} responsibilities={responsibilities} setResponsibilities={setResponsibilities} startWorkDate={startWorkDate} setStartWorkDate={setStartWorkDate} endWorkDate={endWorkDate} setEndWorkDate={setEndWorkDate} workStatus={workStatus} setWorkStatus={setWorkStatus}/>
       </div>
     </div>
+    </div>
     <div className="resume-container">
-      <Resume works={works} business={business} jobTitle={jobTitle} responsibilities={responsibilities} startWorkDate={startWorkDate} endWorkDate={endWorkDate} workStatus={workStatus} state={state} location={location} name={name} title={title} email={email} number={number} status={status} educations={educations} school={school} degree={degree} schoolLocation={schoolLocation} startDate={startDate} endDate={endDate} state={state} />
+      <Resume jobLocation={jobLocation} works={works} business={business} jobTitle={jobTitle} responsibilities={responsibilities} startWorkDate={startWorkDate} endWorkDate={endWorkDate} workStatus={workStatus} state={state} location={location} name={name} title={title} email={email} number={number} status={status} educations={educations} school={school} degree={degree} schoolLocation={schoolLocation} startDate={startDate} endDate={endDate} state={state} />
     </div>
     </div>
     </>

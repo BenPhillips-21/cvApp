@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import GeneralInfo from './generalInfo';
 import '../styles/resumeStyles.css'
 
-export default function Resume({ works, business, jobTitle, responsibilities, startWorkDate, endWorkDate, workStatus, location, name, title, email, number, educations, school, degree, schoolLocation, startDate, endDate }) {
+export default function Resume({ works, jobLocation, business, jobTitle, responsibilities, startWorkDate, endWorkDate, workStatus, location, name, title, email, number, educations, school, degree, schoolLocation, startDate, endDate }) {
     return (
     <>
     <div>
@@ -39,7 +39,7 @@ export default function Resume({ works, business, jobTitle, responsibilities, st
         <div className='education-info'>
             <div className='education-info-group'>
             <div className='dates-container'>
-                <p>{startDate} - {endDate}</p>
+                <p>{startDate}{endDate}</p>
             </div>
             <p>{schoolLocation}</p>
             </div>
@@ -49,24 +49,39 @@ export default function Resume({ works, business, jobTitle, responsibilities, st
             </div>
         </div>
         </div>
-    <div className = 'education-container'>
-    <div className = 'education-heading'>
-        <h1>Professional Experience</h1>
-    </div>
+
+        <div className='education-container'>
+        <div className='education-heading'>
+            <h1>Professional Experience</h1>
+        </div>
         {works.map((work, index) => (
-          <div key={index}>
-            <h3>{work.business}</h3>
-            <p>{work.jobTitle}</p>
-            <p>{work.responsibilities}</p>
-            <p>Start Date: {work.startWorkDate}</p>
-            <p>End Date: {work.endWorkDate}</p>
-          </div>
+            <div key={index} className='education-info'>
+                <div className='education-info-group'>
+                    <div className='dates-container'>
+                        <p>{work.startWorkDate} - {work.endWorkDate}</p>
+                    </div>
+                    <p style={{ marginTop: '16px' }}>{work.jobLocation}</p>
+                </div>
+                <div className='education-info-group'>
+                    <p style={{ fontSize: '24px', fontWeight: '700', marginBottom: '-8px', marginTop: '16px' }}>{work.business}</p>
+                    <p>{work.jobTitle}</p>
+                    <p>{work.responsibilities}</p>
+                </div>
+            </div>
         ))}
-        <p>{business}</p>
+    <div className="education-info">
+    <div className='education-info-group'>
+         <div className='dates-container'>
+        <p>{startWorkDate}{endWorkDate}</p>
+         </div>
+         <p style={{ marginTop: '16px' }}>{jobLocation}</p>
+        </div>
+        <div className='education-info-group'>
+        <p style={{ fontSize: '24px', fontWeight: '700', marginBottom: '-8px', marginTop: '16px' }}>{business}</p>
         <p>{jobTitle}</p>
         <p>{responsibilities}</p>
-        <p>{startWorkDate}</p>
-        <p>{endWorkDate}</p>
+        </div>
+    </div>
     </div>
     </>
     );

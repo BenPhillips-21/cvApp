@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function WorkHistory({ works, setWorks, business, setBusiness, jobTitle, setJobTitle, responsibilities, setResponsibilities, startWorkDate, setStartWorkDate, endWorkDate, setEndWorkDate, workStatus, setWorkStatus }) {
+function WorkHistory({ jobLocation, setJobLocation, works, setWorks, business, setBusiness, jobTitle, setJobTitle, responsibilities, setResponsibilities, startWorkDate, setStartWorkDate, endWorkDate, setEndWorkDate, workStatus, setWorkStatus }) {
 
   const [hiddenArray, setHiddenArray] = useState([]);
 
@@ -11,7 +11,8 @@ function WorkHistory({ works, setWorks, business, setBusiness, jobTitle, setJobT
       jobTitle,
       responsibilities,
       startWorkDate,
-      endWorkDate
+      endWorkDate,
+      jobLocation,
     }
     setWorks([...works, newWork]);
     setBusiness('');
@@ -19,6 +20,7 @@ function WorkHistory({ works, setWorks, business, setBusiness, jobTitle, setJobT
     setResponsibilities('');
     setStartWorkDate('');
     setEndWorkDate('');
+    setJobLocation('');
     setWorkStatus(0);
   };
 
@@ -40,11 +42,12 @@ function WorkHistory({ works, setWorks, business, setBusiness, jobTitle, setJobT
           jobTitle: hiddenArray[i][1],
           responsibilities: hiddenArray[i][2],
           startWorkDate: hiddenArray[i][3],
-          endWorkDate: hiddenArray[i][4]
+          endWorkDate: hiddenArray[i][4],
+          jobLocation: hiddenArray[i][5]
         };
-        const targetIndex = hiddenArray[i][5];
+        const targetIndex = hiddenArray[i][6];
         const newWorks = [...works];
-        if (hiddenArray[i][5] === 0) {
+        if (hiddenArray[i][6] === 0) {
           newWorks.unshift(newWork);
         } else {
           newWorks.splice(targetIndex, 0, newWork);
@@ -64,9 +67,10 @@ function WorkHistory({ works, setWorks, business, setBusiness, jobTitle, setJobT
     let c = targetWork.responsibilities
     let d = targetWork.startWorkDate
     let e = targetWork.endWorkDate
+    let f = targetWork.jobLocation
     const index = works.indexOf(targetWork);
     console.log(index)
-    let newHiddenArray = ([a, b, c, d, e, index])
+    let newHiddenArray = ([a, b, c, d, e, f, index])
     setHiddenArray((prevHiddenArray) => [...prevHiddenArray, newHiddenArray])
     setWorks((prevWorks) => prevWorks.filter((work) => work.id !== id));
   }
@@ -80,6 +84,7 @@ function WorkHistory({ works, setWorks, business, setBusiness, jobTitle, setJobT
       setResponsibilities(targetWork.responsibilities);
       setStartWorkDate(targetWork.workStartDate);
       setEndWorkDate(targetWork.workEndDate);
+      setJobLocation(targetWork.jobLocation);
   
       setWorks((prevWorks) =>
         prevWorks.filter((work) => work.id !== id)
@@ -113,39 +118,57 @@ function WorkHistory({ works, setWorks, business, setBusiness, jobTitle, setJobT
   } else if (workStatus === 1) {
     return (
       <>
-        <label>Business:</label> <br></br>
-        <input
-          type="text"
+        <label>Business:</label> <br />
+        <textarea
+          rows="1"
+          cols="45"
           value={business}
           onChange={(event) => setBusiness(event.target.value)}
         />
         <br />
-        <label>Job Title:</label> <br></br>
-        <input
-          type="text"
+
+        <label>Job Title:</label> <br />
+        <textarea
+          rows="1"
+          cols="45"
           value={jobTitle}
           onChange={(event) => setJobTitle(event.target.value)}
         />
         <br />
-        <label>Responsibilities:</label> <br></br>
-        <input
-          type="text"
-          value={responsibilities}
-          onChange={(event) => setResponsibilities(event.target.value)}
+
+        <label>Job Location:</label> <br />
+        <textarea
+          rows="1"
+          cols="45"
+          value={jobLocation}
+          onChange={(event) => setJobLocation(event.target.value)}
         />
         <br />
-        <label>Start Date:</label> <br></br>
-        <input
-          type="text"
+
+        <label>Start Date:</label> <br />
+        <textarea
+          rows="1"
+          cols="45"
           value={startWorkDate}
           onChange={(event) => setStartWorkDate(event.target.value)}
         />
         <br />
-        <label>End Date:</label> <br></br>
-        <input
-          type="text"
+
+        <label>End Date:</label> <br />
+        <textarea
+          rows="1"
+          cols="45"
           value={endWorkDate}
           onChange={(event) => setEndWorkDate(event.target.value)}
+        />
+        <br />
+
+        <label>Responsibilities:</label> <br />
+        <textarea
+          rows="5"
+          cols="45"
+          value={responsibilities}
+          onChange={(event) => setResponsibilities(event.target.value)}
         />
         <br />
         <button onClick={addWork}>Save</button>

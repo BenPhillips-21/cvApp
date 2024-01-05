@@ -116,44 +116,54 @@ function EducationHistory({ state, setState, educations, setEducations, school, 
     )
   } else if (state === 1) {
     return (
-      <>
-        <label>School Name:</label> <br></br>
-        <input
-          type="text"
-          value={school}
-          onChange={(event) => setSchool(event.target.value)}
-        />
-        <br />
-        <label>Degree Title:</label> <br></br>
-        <input
-          type="text"
-          value={degree}
-          onChange={(event) => setDegree(event.target.value)}
-        />
-        <br />
-        <label>School Location:</label> <br></br>
-        <input
-          type="text"
-          value={schoolLocation}
-          onChange={(event) => setSchoolLocation(event.target.value)}
-        />
-        <br />
-        <label>Start Date:</label> <br></br>
-        <input
-          type="text"
-          value={startDate}
-          onChange={(event) => setStartDate(event.target.value)}
-        />
-        <br />
-        <label>End Date:</label> <br></br>
-        <input
-          type="text"
-          value={endDate}
-          onChange={(event) => setEndDate(event.target.value)}
-        />
-        <br />
-        <button onClick={handleSave}>Save</button>
-      </>
+<>
+  <label>School Name:</label> <br />
+  <textarea
+    rows="1"
+    cols="45"
+    value={school}
+    onChange={(event) => setSchool(event.target.value)}
+  />
+  <br />
+
+  <label>Degree Title:</label> <br />
+  <textarea
+    rows="1"
+    cols="45"
+    value={degree}
+    onChange={(event) => setDegree(event.target.value)}
+  />
+  <br />
+
+  <label>School Location:</label> <br />
+  <textarea
+    rows="1"
+    cols="45"
+    value={schoolLocation}
+    onChange={(event) => setSchoolLocation(event.target.value)}
+  />
+  <br />
+
+  <label>Start Date:</label> <br />
+  <textarea
+    rows="1"
+    cols="45"
+    value={startDate}
+    onChange={(event) => setStartDate(event.target.value)}
+  />
+  <br />
+
+  <label>End Date:</label> <br />
+  <textarea
+    rows="1"
+    cols="45"
+    value={endDate}
+    onChange={(event) => setEndDate(event.target.value)}
+  />
+  <br />
+
+  <button onClick={handleSave}>Save</button>
+</>
     ) } 
     }
 
