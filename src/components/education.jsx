@@ -76,12 +76,13 @@ function EducationHistory({ state, setState, educations, setEducations, school, 
   };
 
   function handleSave() {
+    const displayStartDate = startDate + ' - ';
     const newEducation = {
       id: school,
       school,
       degree,
       schoolLocation,
-      startDate,
+      startDate: displayStartDate,
       endDate,
     };
     setEducations([...educations, newEducation]);
@@ -111,7 +112,7 @@ function EducationHistory({ state, setState, educations, setEducations, school, 
             <button onClick={() => hide(education.id)}>Hide</button>
         </div>
         ))}
-      <button onClick={handleAddEducaation}>+ Education</button>
+      <button onClick={handleAddEducaation}>Add Education</button>
       </>
     )
   } else if (state === 1) {
@@ -120,7 +121,7 @@ function EducationHistory({ state, setState, educations, setEducations, school, 
   <label>School Name:</label> <br />
   <textarea
     rows="1"
-    cols="45"
+    cols="30"
     value={school}
     onChange={(event) => setSchool(event.target.value)}
   />
@@ -129,7 +130,7 @@ function EducationHistory({ state, setState, educations, setEducations, school, 
   <label>Degree Title:</label> <br />
   <textarea
     rows="1"
-    cols="45"
+    cols="30"
     value={degree}
     onChange={(event) => setDegree(event.target.value)}
   />
@@ -138,7 +139,7 @@ function EducationHistory({ state, setState, educations, setEducations, school, 
   <label>School Location:</label> <br />
   <textarea
     rows="1"
-    cols="45"
+    cols="30"
     value={schoolLocation}
     onChange={(event) => setSchoolLocation(event.target.value)}
   />
@@ -147,7 +148,7 @@ function EducationHistory({ state, setState, educations, setEducations, school, 
   <label>Start Date:</label> <br />
   <textarea
     rows="1"
-    cols="45"
+    cols="30"
     value={startDate}
     onChange={(event) => setStartDate(event.target.value)}
   />
@@ -156,7 +157,7 @@ function EducationHistory({ state, setState, educations, setEducations, school, 
   <label>End Date:</label> <br />
   <textarea
     rows="1"
-    cols="45"
+    cols="30"
     value={endDate}
     onChange={(event) => setEndDate(event.target.value)}
   />

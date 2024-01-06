@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import GeneralInfo from './generalInfo';
 import '../styles/resumeStyles.css'
 
-export default function Resume({ works, jobLocation, business, jobTitle, responsibilities, startWorkDate, endWorkDate, workStatus, location, name, title, email, number, educations, school, degree, schoolLocation, startDate, endDate }) {
-    return (
+export default function Resume({ font, colour, works, jobLocation, business, jobTitle, responsibilities, startWorkDate, endWorkDate, workStatus, location, name, title, email, number, educations, school, degree, schoolLocation, startDate, endDate }) {
+    const currentFont = font;
+    console.log(currentFont)
+    return ( 
     <>
-    <div>
-        <div className = 'chungus'>
+        <div style={{ fontFamily: `${currentFont}` }}>
+        <div style={{ backgroundColor: colour }} className = 'chungus'>
             <div className='header'>
                 <h1>{name}</h1>
                 <h2>{title}</h2>
@@ -18,15 +20,15 @@ export default function Resume({ works, jobLocation, business, jobTitle, respons
             </div>
         </div>
     </div>
-    <div className='education-container'>
+    <div style={{ fontFamily: `${currentFont}` }} className='education-container'>
         <div className='education-heading'>
-            <h1>Education</h1>
+            <h1 style={{ color: colour }}>Education</h1>
         </div>
         {educations.map((education, index) => (
             <div key={index} className='education-info'>
             <div className='education-info-group'>
                 <div className='dates-container'>
-                    <p>{education.startDate} - {education.endDate}</p>
+                    <p>{education.startDate} {education.endDate}</p>
                 </div>
                 <p>{education.schoolLocation}</p>
             </div>
@@ -50,15 +52,15 @@ export default function Resume({ works, jobLocation, business, jobTitle, respons
         </div>
         </div>
 
-        <div className='education-container'>
+        <div style={{ fontFamily: `${currentFont}` }} className='education-container'>
         <div className='education-heading'>
-            <h1>Professional Experience</h1>
+            <h1 style={{ color: colour }}>Professional Experience</h1>
         </div>
         {works.map((work, index) => (
             <div key={index} className='education-info'>
                 <div className='education-info-group'>
                     <div className='dates-container'>
-                        <p>{work.startWorkDate} - {work.endWorkDate}</p>
+                        <p>{work.startWorkDate} {work.endWorkDate}</p>
                     </div>
                     <p style={{ marginTop: '16px' }}>{work.jobLocation}</p>
                 </div>

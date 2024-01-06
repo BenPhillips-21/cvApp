@@ -112,7 +112,7 @@ function WorkHistory({ jobLocation, setJobLocation, works, setWorks, business, s
               <button onClick={() => hide(work.id)}>Hide</button>
             </div>
           ))}
-        <button onClick={addMore}>+ Work</button>
+        <button onClick={addMore}>Add Work</button>
       </>
     );
   } else if (workStatus === 1) {
@@ -121,7 +121,7 @@ function WorkHistory({ jobLocation, setJobLocation, works, setWorks, business, s
         <label>Business:</label> <br />
         <textarea
           rows="1"
-          cols="45"
+          cols="30"
           value={business}
           onChange={(event) => setBusiness(event.target.value)}
         />
@@ -130,7 +130,7 @@ function WorkHistory({ jobLocation, setJobLocation, works, setWorks, business, s
         <label>Job Title:</label> <br />
         <textarea
           rows="1"
-          cols="45"
+          cols="30"
           value={jobTitle}
           onChange={(event) => setJobTitle(event.target.value)}
         />
@@ -139,7 +139,7 @@ function WorkHistory({ jobLocation, setJobLocation, works, setWorks, business, s
         <label>Job Location:</label> <br />
         <textarea
           rows="1"
-          cols="45"
+          cols="30"
           value={jobLocation}
           onChange={(event) => setJobLocation(event.target.value)}
         />
@@ -148,7 +148,7 @@ function WorkHistory({ jobLocation, setJobLocation, works, setWorks, business, s
         <label>Start Date:</label> <br />
         <textarea
           rows="1"
-          cols="45"
+          cols="30"
           value={startWorkDate}
           onChange={(event) => setStartWorkDate(event.target.value)}
         />
@@ -157,7 +157,7 @@ function WorkHistory({ jobLocation, setJobLocation, works, setWorks, business, s
         <label>End Date:</label> <br />
         <textarea
           rows="1"
-          cols="45"
+          cols="30"
           value={endWorkDate}
           onChange={(event) => setEndWorkDate(event.target.value)}
         />
@@ -166,7 +166,7 @@ function WorkHistory({ jobLocation, setJobLocation, works, setWorks, business, s
         <label>Responsibilities:</label> <br />
         <textarea
           rows="5"
-          cols="45"
+          cols="30"
           value={responsibilities}
           onChange={(event) => setResponsibilities(event.target.value)}
         />

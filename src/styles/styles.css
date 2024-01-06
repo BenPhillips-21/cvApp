@@ -2,15 +2,41 @@
     display: flex;
     flex-direction: row;
 }
-
-
   
   .section {
     flex: 1; /* Each section takes up equal height */
     padding: 20px; /* Optional padding for each section */
     box-sizing: border-box;
-    border: 1px solid black;
+    border-radius: 30px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFF;
+  }
+
+  .section button {
+    background-color: #e1e3e7;
     margin: 5px;
+  }
+
+  .unique-section {
+    flex: 1; /* Each section takes up equal height */
+    padding: 20px; /* Optional padding for each section */
+    box-sizing: border-box;
+    border-radius: 30px;
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFF;
+  }
+
+  .unique-section button {
+    margin: 7px;
+    background-color: #e1e3e7;
   }
 
   .app-container {
@@ -60,11 +86,6 @@
   margin-top: -25px;
 }
 
-.app-container {
-  background-color: #fff; 
-
-}
-
 body {
   background-color: #f3f4f6; 
 }
@@ -88,4 +109,30 @@ body {
   font-size: 20px;
 }
 
+textarea {
+  background-color: #f3f4f6;
+  border-radius: 12px;
+  margin: 8px;
+}
+
+textarea:focus {
+  border-color: #3498db; /* Highlight color when selected */
+}
+
+label {
+  font-weight: bold;
+}
+
+.custom-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-buttons button {
+  width: 250%;
+  margin: 5px;
+  background-color: #e1e3e7;
+}
   
