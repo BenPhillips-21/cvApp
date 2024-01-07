@@ -32,7 +32,7 @@ function ClearLoad({ jobLocation, setJobLocation, works, setWorks, business, set
         setJobTitle('Software Development Intern');
         setJobLocation('Melbourne')
         setResponsibilities('Collaborated within a team to develop a React dashboard application, actively participating in sprint planning, daily stand-ups, and retrospective meetings. Designed and implemented Docker containers to encapsulate applications, ensuring consistent and reproducible deployments across different environments.');
-        setStartWorkDate('Sep 2023 - ');
+        setStartWorkDate('Sep 2023');
         setEndWorkDate('Dec 2023');
         setWorkStatus(1); 
         setState(1);
@@ -47,7 +47,7 @@ function ClearLoad({ jobLocation, setJobLocation, works, setWorks, business, set
         setSchool('Coder Academy');
         setDegree('Full Stack Web Development Course');
         setSchoolLocation('Melbourne');
-        setStartDate('Mar 2023 - ');
+        setStartDate('Mar 2023');
         setEndDate('Sep 2023');
     }
     

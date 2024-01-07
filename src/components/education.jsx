@@ -76,13 +76,12 @@ function EducationHistory({ state, setState, educations, setEducations, school, 
   };
 
   function handleSave() {
-    const displayStartDate = startDate + ' - ';
     const newEducation = {
       id: school,
       school,
       degree,
       schoolLocation,
-      startDate: displayStartDate,
+      startDate,
       endDate,
     };
     setEducations([...educations, newEducation]);

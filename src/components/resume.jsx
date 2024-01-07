@@ -28,7 +28,7 @@ export default function Resume({ font, colour, works, jobLocation, business, job
             <div key={index} className='education-info'>
             <div className='education-info-group'>
                 <div className='dates-container'>
-                    <p>{education.startDate} {education.endDate}</p>
+                    <p>{education.startDate} - {education.endDate}</p>
                 </div>
                 <p>{education.schoolLocation}</p>
             </div>
@@ -41,7 +41,7 @@ export default function Resume({ font, colour, works, jobLocation, business, job
         <div className='education-info'>
             <div className='education-info-group'>
             <div className='dates-container'>
-                <p>{startDate}{endDate}</p>
+            <p>{startDate ? startDate + ' - ' + endDate : endDate}</p>
             </div>
             <p>{schoolLocation}</p>
             </div>
@@ -60,7 +60,7 @@ export default function Resume({ font, colour, works, jobLocation, business, job
             <div key={index} className='education-info'>
                 <div className='education-info-group'>
                     <div className='dates-container'>
-                        <p>{work.startWorkDate} {work.endWorkDate}</p>
+                        <p>{work.startWorkDate} - {work.endWorkDate}</p>
                     </div>
                     <p style={{ marginTop: '16px' }}>{work.jobLocation}</p>
                 </div>
@@ -74,7 +74,8 @@ export default function Resume({ font, colour, works, jobLocation, business, job
     <div className="education-info">
     <div className='education-info-group'>
          <div className='dates-container'>
-        <p>{startWorkDate}{endWorkDate}</p>
+        {/* <p>{startWorkDate} {endWorkDate}</p> */}
+        <p>{startWorkDate ? startWorkDate + ' - ' + endWorkDate : endDate}</p>
          </div>
          <p style={{ marginTop: '16px' }}>{jobLocation}</p>
         </div>
