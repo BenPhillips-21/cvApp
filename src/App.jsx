@@ -10,31 +10,31 @@ import ClearLoad from './components/clearLoad.jsx';
 import Customize from './components/customize.jsx';
 import Colour from './components/changeColour.jsx';
 import Font from './components/changeFont.jsx';
-
+import { Helmet } from 'react-helmet';
 function App() {
-  const [name, setName] = useState('');
-  const [title, setTitle] = useState('');
-  const [email, setEmail] = useState('');
-  const [number, setNumber] = useState('');
-  const [location, setLocation] = useState('');
+  const [name, setName] = useState('Benjamin Phillips');
+  const [title, setTitle] = useState('Junior Software Developer');
+  const [email, setEmail] = useState('pben012@gmail.com');
+  const [number, setNumber] = useState('0480 494 579');
+  const [location, setLocation] = useState('Melbourne, Australia');
   const [status, setStatus] = useState(false);
 
   const [educations, setEducations] = useState([]);
-  const [school, setSchool] = useState('');
-  const [degree, setDegree] = useState('');
-  const [schoolLocation, setSchoolLocation] = useState('');
-  const [startDate, setStartDate] = useState('');
-  const [endDate, setEndDate] = useState('');
-  const [state, setState] = useState(0);
+  const [school, setSchool] = useState('Coder Academy');
+  const [degree, setDegree] = useState('Full Stack Web Development Course');
+  const [schoolLocation, setSchoolLocation] = useState('Melbourne');
+  const [startDate, setStartDate] = useState('Mar 2023');
+  const [endDate, setEndDate] = useState('Sep 2023');
+  const [state, setState] = useState(1);
 
   const [works, setWorks] = useState([]);
-  const [business, setBusiness] = useState('');
-  const [jobTitle, setJobTitle] = useState('');
-  const [responsibilities, setResponsibilities] = useState('');
-  const [startWorkDate, setStartWorkDate] = useState('');
-  const [endWorkDate, setEndWorkDate] = useState('');
-  const [jobLocation, setJobLocation] = useState('');
-  const [workStatus, setWorkStatus] = useState(0);
+  const [business, setBusiness] = useState('DeployPartners');
+  const [jobTitle, setJobTitle] = useState('Software Development Intern');
+  const [responsibilities, setResponsibilities] = useState('Collaborated within a team to develop a React dashboard application, actively participating in sprint planning, daily stand-ups, and retrospective meetings. Designed and implemented Docker containers to encapsulate applications, ensuring consistent and reproducible deployments across different environments.');
+  const [startWorkDate, setStartWorkDate] = useState('Sep 2023');
+  const [endWorkDate, setEndWorkDate] = useState('Dec 2023');
+  const [jobLocation, setJobLocation] = useState('Melbourne');
+  const [workStatus, setWorkStatus] = useState(1);
 
   const [page, setPage] = useState('content');
 
@@ -46,6 +46,10 @@ function App() {
     return (
       <>
         <div className="papa-container">
+        <Helmet>
+        <title>Résumé Generator</title>
+        <link rel="icon" type="image/png" href="/icons8-resume-ios-17-96.png" />
+      </Helmet>
             <div className="app-container">
               <div className="container-container">
               <div className="section">

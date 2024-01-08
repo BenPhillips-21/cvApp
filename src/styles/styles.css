@@ -132,6 +132,7 @@ label {
 
 .custom-buttons button {
   width: 250%;
+  font-weight: bold;
   margin: 5px;
   background-color: #e1e3e7;
 }

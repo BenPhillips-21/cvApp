@@ -4,7 +4,6 @@ import '../styles/resumeStyles.css'
 
 export default function Resume({ font, colour, works, jobLocation, business, jobTitle, responsibilities, startWorkDate, endWorkDate, workStatus, location, name, title, email, number, educations, school, degree, schoolLocation, startDate, endDate }) {
     const currentFont = font;
-    console.log(currentFont)
     return ( 
     <>
         <div style={{ fontFamily: `${currentFont}` }}>
@@ -74,8 +73,7 @@ export default function Resume({ font, colour, works, jobLocation, business, job
     <div className="education-info">
     <div className='education-info-group'>
          <div className='dates-container'>
-        {/* <p>{startWorkDate} {endWorkDate}</p> */}
-        <p>{startWorkDate ? startWorkDate + ' - ' + endWorkDate : endDate}</p>
+        <p>{startWorkDate ? startWorkDate + ' - ' + endWorkDate : endWorkDate}</p>
          </div>
          <p style={{ marginTop: '16px' }}>{jobLocation}</p>
         </div>

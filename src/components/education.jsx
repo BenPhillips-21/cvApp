@@ -99,19 +99,19 @@ function EducationHistory({ state, setState, educations, setEducations, school, 
         {hiddenArray.length > 0 && <h4>Hidden</h4>}
           {hiddenArray.map((hiddenItem) => (
             <div key={hiddenItem[0]}>
-              <button>{hiddenItem[0]}</button>
-              <button onClick={() => unHide(hiddenItem[0])}>Unhide</button>
+              <button style={{ fontWeight: 'bold' }}>{hiddenItem[0]}</button>
+              <button style={{ fontWeight: 'bold' }} onClick={() => unHide(hiddenItem[0])}>Unhide</button>
             </div>
               ))}
         {hiddenArray.length > 0 && <h4>Visible</h4>}
       {educations.map((education) => (
         <div key={education.id}>
-            <button onClick={() => editEducation(education.id)}>{education.school}</button>
-            <button onClick={() => remove(education.id)}>Delete</button>
-            <button onClick={() => hide(education.id)}>Hide</button>
+            <button style={{ fontWeight: 'bold' }} onClick={() => editEducation(education.id)}>{education.school}</button>
+            <button style={{ fontWeight: 'bold' }} onClick={() => remove(education.id)}>Delete</button>
+            <button style={{ fontWeight: 'bold' }} onClick={() => hide(education.id)}>Hide</button>
         </div>
         ))}
-      <button onClick={handleAddEducaation}>Add Education</button>
+      <button style={{ fontWeight: 'bold' }} onClick={handleAddEducaation}>Add Education</button>
       </>
     )
   } else if (state === 1) {
@@ -162,7 +162,7 @@ function EducationHistory({ state, setState, educations, setEducations, school, 
   />
   <br />
 
-  <button onClick={handleSave}>Save</button>
+  <button style={{ fontWeight: 'bold' }} onClick={handleSave}>Save</button>
 </>
     ) } 
     }

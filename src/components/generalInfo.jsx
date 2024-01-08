@@ -55,7 +55,7 @@ function GeneralInfo({ location, setLocation, name, setName, title, setTitle, em
   />
   <br />
 
-  <button onClick={handleSave}>Save</button>
+  <button style={{ fontWeight: 'bold' }} onClick={handleSave}>Save</button>
 </>
 
     )
@@ -63,7 +63,7 @@ function GeneralInfo({ location, setLocation, name, setName, title, setTitle, em
     else {
       return (
         <>
-          <button onClick={handleSave}>Edit Personal Information</button>
+          <button style={{ fontWeight: 'bold' }} onClick={handleSave}>Edit Personal Information</button>
         </>
       )
     }

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './styles/styles.css';
 
 function Customize({page, setPage}) {
 

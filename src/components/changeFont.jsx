@@ -10,9 +10,9 @@ function Font({ font, setFont }) {
     return (
         <>
         <div className='font-buttons'>
-            <button onClick={() => changeFont('serif')}>Serif</button>
-            <button onClick={() => changeFont('sans-serif')}>Sans</button>
-            <button onClick={() => changeFont('monospace')}>Mono</button>
+            <button style={{ fontWeight: 'bold' }} onClick={() => changeFont('serif')}>Serif</button>
+            <button style={{ fontWeight: 'bold' }} onClick={() => changeFont('sans-serif')}>Sans</button>
+            <button style={{ fontWeight: 'bold' }} onClick={() => changeFont('monospace')}>Mono</button>
         </div>
         </>
     )

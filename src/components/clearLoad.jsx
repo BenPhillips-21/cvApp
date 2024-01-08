@@ -54,8 +54,8 @@ function ClearLoad({ jobLocation, setJobLocation, works, setWorks, business, set
     
     return (
         <>
-            <button onClick={handleClear}>Clear Resume</button>
-            <button onClick={handleLoad}>Load Example</button>
+            <button style={{ backgroundColor: '#D01110', fontWeight: 'bold' }} onClick={handleClear}>Clear Resume</button>
+            <button style={{ fontWeight: 'bold' }} onClick={handleLoad}>Load Example</button>
         </>
     )
 }

@@ -100,19 +100,19 @@ function WorkHistory({ jobLocation, setJobLocation, works, setWorks, business, s
         {hiddenArray.length > 0 && <h4>Hidden</h4>}
           {hiddenArray.map((hiddenItem) => (
             <div key={hiddenItem[0]}>
-              <button>{hiddenItem[0]}</button>
-              <button onClick={() => unHide(hiddenItem[0])}>Unhide</button>
+              <button style={{ fontWeight: 'bold' }}>{hiddenItem[0]}</button>
+              <button style={{ fontWeight: 'bold' }} onClick={() => unHide(hiddenItem[0])}>Unhide</button>
             </div>
               ))}
         {hiddenArray.length > 0 && <h4>Visible</h4>}
           {works.map((work) => (
             <div key={work.id}>
-              <button onClick={() => editWork(work.id)}>{work.business}</button>
-              <button onClick={() => remove(work.id)}>Delete</button>
-              <button onClick={() => hide(work.id)}>Hide</button>
+              <button style={{ fontWeight: 'bold' }} onClick={() => editWork(work.id)}>{work.business}</button>
+              <button style={{ fontWeight: 'bold' }} onClick={() => remove(work.id)}>Delete</button>
+              <button style={{ fontWeight: 'bold' }} onClick={() => hide(work.id)}>Hide</button>
             </div>
           ))}
-        <button onClick={addMore}>Add Work</button>
+        <button style={{ fontWeight: 'bold' }} onClick={addMore}>Add Work</button>
       </>
     );
   } else if (workStatus === 1) {
@@ -171,7 +171,7 @@ function WorkHistory({ jobLocation, setJobLocation, works, setWorks, business, s
           onChange={(event) => setResponsibilities(event.target.value)}
         />
         <br />
-        <button onClick={addWork}>Save</button>
+        <button style={{ fontWeight: 'bold' }} onClick={addWork}>Save</button>
       </>
     );
   }
