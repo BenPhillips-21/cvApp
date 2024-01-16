@@ -6,6 +6,7 @@ import GeneralInfo from './components/generalInfo.jsx'
 import EducationHistory from './components/education.jsx'
 import WorkHistory from './components/practical.jsx'
 import Resume from './components/resume.jsx'
+import ClearLoad from './components/clearLoad.jsx'
 
 function App() {
   const [name, setName] = useState('');
@@ -35,6 +36,9 @@ function App() {
     <>
     <div className="papa-container">
     <div className="app-container">
+      <div className="section">
+      <ClearLoad works={works} setWorks={setWorks} business={business} setBusiness={setBusiness} jobTitle={jobTitle} setJobTitle={setJobTitle} responsibilities={responsibilities} setResponsibilities={setResponsibilities} startWorkDate={startWorkDate} setStartWorkDate={setStartWorkDate} endWorkDate={endWorkDate} setEndWorkDate={setEndWorkDate} workStatus={workStatus} setWorkStatus={setWorkStatus} state={state} setState={setState} location={location} setLocation={setLocation} name={name} setName={setName} title={title} setTitle={setTitle} email={email} setEmail={setEmail} number={number} setNumber={setNumber} status={status} setStatus={setStatus} educations={educations} setEducations={setEducations} school={school} setSchool={setSchool} degree={degree} setDegree={setDegree} schoolLocation={schoolLocation} setSchoolLocation={setSchoolLocation} startDate={startDate} setStartDate={setStartDate} endDate={endDate} setEndDate={setEndDate} />
+      </div>
       <div className="section">
         <GeneralInfo location={location} setLocation={setLocation} name={name} setName={setName} title={title} setTitle={setTitle} email={email} setEmail={setEmail} number={number} setNumber={setNumber} status={status} setStatus={setStatus} />
       </div>

@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 
 function WorkHistory({ works, setWorks, business, setBusiness, jobTitle, setJobTitle, responsibilities, setResponsibilities, startWorkDate, setStartWorkDate, endWorkDate, setEndWorkDate, workStatus, setWorkStatus }) {
 
+  const [hiddenArray, setHiddenArray] = useState([]);
+
   const addWork = () => {
     const newWork = {
       id: business,
@@ -24,11 +26,41 @@ function WorkHistory({ works, setWorks, business, setBusiness, jobTitle, setJobT
     setWorkStatus(1);
   };
 
-  const remove = (key) => {
-    let newWorks = [...works];
-    newWorks.splice(key, 1);
-    setWorks(newWorks);
+  const remove = (id) => {
+    setWorks((prevWorks) => prevWorks.filter((work) => work.id !== id));
   };
+
+  const unHide = (id) => {
+    console.log('unhide', id)
+    for (let i = 0; i < hiddenArray.length; i++) {
+      if (id === hiddenArray[i][0]) {
+        const newWork = {
+          id: hiddenArray[i][0],
+          business: hiddenArray[i][0],
+          jobTitle: hiddenArray[i][1],
+          responsibilities: hiddenArray[i][2],
+          startWorkDate: hiddenArray[i][3],
+          endWorkDate: hiddenArray[i][4]
+        };
+        setWorks([...works, newWork]);
+        setHiddenArray((prevHiddenArray) =>
+        prevHiddenArray.filter((item, index) => index !== i)
+      );
+      }
+    }
+  }
+
+  const hide = (id) => {
+    const targetWork = works.find((work) => work.id === id);
+    let a = targetWork.business
+    let b = targetWork.jobTitle
+    let c = targetWork.responsibilities
+    let d = targetWork.startWorkDate
+    let e = targetWork.endWorkDate
+    let newHiddenArray = ([a, b, c, d, e])
+    setHiddenArray((prevHiddenArray) => [...prevHiddenArray, newHiddenArray])
+    setWorks((prevWorks) => prevWorks.filter((work) => work.id !== id));
+  }
 
   const editWork = (id) => {
     console.log(id)
@@ -50,13 +82,21 @@ function WorkHistory({ works, setWorks, business, setBusiness, jobTitle, setJobT
     }
   }
 
+
   if (workStatus === 0) {
     return (
       <>
+        {hiddenArray.map((hiddenItem, index) => (
+          <div key={hiddenItem[0]}>
+            <button>{hiddenItem[0]}</button>
+            <button onClick={() => unHide(hiddenItem[0])}>Unhide</button>
+          </div>
+            ))}
         {works.map((work) => (
           <div key={work.id}>
             <button onClick={() => editWork(work.id)}>{work.business}</button>
-            <button onClick={() => remove(index)}>Delete</button>
+            <button onClick={() => remove(work.id)}>Delete</button>
+            <button onClick={() => hide(work.id)}>Hide</button>
           </div>
         ))}
         <button onClick={addMore}>+ Work</button>
@@ -100,7 +140,7 @@ function WorkHistory({ works, setWorks, business, setBusiness, jobTitle, setJobT
           onChange={(event) => setEndWorkDate(event.target.value)}
         />
         <br />
-        <button onClick={addWork}>Submit Work</button>
+        <button onClick={addWork}>Save</button>
       </>
     );
   }

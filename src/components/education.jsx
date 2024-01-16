@@ -28,6 +28,9 @@ function EducationHistory({ state, setState, educations, setEducations, school, 
     }
   }
   
+  const remove = (id) => {
+    setEducations((prevEducations) => prevEducations.filter((education) => education.id !== id));
+  };
 
   function handleSave() {
     const newEducation = {
@@ -53,6 +56,7 @@ function EducationHistory({ state, setState, educations, setEducations, school, 
       {educations.map((education) => (
         <div key={education.id}>
             <button onClick={() => editEducation(education.id)}>{education.school}</button>
+            <button onClick={() => remove(education.id)}>Delete</button>
         </div>
         ))}
       <button onClick={handleAddEducaation}>+ Education</button>
