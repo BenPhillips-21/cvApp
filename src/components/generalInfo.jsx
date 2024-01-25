@@ -1,55 +1,40 @@
 import React from 'react';
 import { useState } from 'react'
-function GeneralInfo() {
-    const [name, setName] = useState('');
-    const [title, setTitle] = useState('');
-    const [email, setEmail] = useState('');
-    const [number, setNumber] = useState('');
-    const [status, setStatus] = useState(false);
-  
-    function onSubmit() {
-        setStatus(true)
-    }
-
-    if (status === false) {
+function GeneralInfo({ location, setLocation, name, setName, title, setTitle, email, setEmail, number, setNumber, status, setStatus }) {
     return (<>
     <h3>General Information:</h3>
-    <label>Name:</label>
+    <label>Name:</label> <br></br>
       <input
           type="text"
           value={name}
           onChange={(event) => setName(event.target.value)}
       /> <br></br>
-      <label>Job Title:</label>
+      <label>Job Title:</label> <br></br>
       <input
           type="text"
           value={title}
           onChange={(event) => setTitle(event.target.value)}
       /> <br></br>
-    <label>E-Mail:</label>
+    <label>E-Mail:</label> <br></br>
       <input
           type="text"
           value={email}
           onChange={(event) => setEmail(event.target.value)}
       /> <br></br>
-    <label>Phone Number:</label>
+    <label>Phone Number:</label> <br></br>
       <input
           type="text"
           value={number}
           onChange={(event) => setNumber(event.target.value)}
       /> <br></br>
-      <button onClick={onSubmit}>Submit</button>
+    <label>Location:</label> <br></br>
+      <input
+          type="text"
+          value={location}
+          onChange={(event) => setLocation(event.target.value)}
+      /> <br></br>
       </>
-    );} else {
-        return (
-            <>
-            <h3>{name}</h3>
-            <h3>{title}</h3>
-            <h3>{email}</h3>
-            <h3>{number}</h3>
-            </>
-        )
-    }
+    )
   }
   
   export default GeneralInfo;

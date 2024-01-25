@@ -56,35 +56,35 @@ const Work = () => {
             <p>End Date: {work.endDate}</p>
           </div>
         ))}
-        <label>Business:</label>
+        <label>Business:</label> <br></br>
         <input
           type="text"
           value={business}
           onChange={(event) => setBusiness(event.target.value)}
         />
         <br />
-        <label>Job Title:</label>
+        <label>Job Title:</label> <br></br>
         <input
           type="text"
           value={jobTitle}
           onChange={(event) => setJobTitle(event.target.value)}
         />
         <br />
-        <label>Responsibilities:</label>
+        <label>Responsibilities:</label> <br></br>
         <input
           type="text"
           value={responsibilities}
           onChange={(event) => setResponsibilities(event.target.value)}
         />
         <br />
-        <label>Start Date:</label>
+        <label>Start Date:</label> <br></br>
         <input
           type="text"
           value={startDate}
           onChange={(event) => setStartDate(event.target.value)}
         />
         <br />
-        <label>End Date:</label>
+        <label>End Date:</label> <br></br>
         <input
           type="text"
           value={endDate}

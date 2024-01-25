@@ -6,20 +6,24 @@
 .app-container {
     display: flex;
     flex-direction: column; /* Stack items vertically */
-    width: 40vw; /* 100% of viewport width */
+    width: 30vw; /* 100% of viewport width */
   }
   
   .section {
     flex: 1; /* Each section takes up equal height */
     padding: 20px; /* Optional padding for each section */
     box-sizing: border-box;
+    border: 1px solid black;
+    margin: 5px;
   }
 
 
   .resume-container {
     display: flex;
     flex-direction: column; /* Stack items vertically */
-    width: 60vw; /* 100% of viewport width */
+    width: 65vw; /* 100% of viewport width */
+    border: 1px solid black;
+    margin-left: 17px;
 }
 
   

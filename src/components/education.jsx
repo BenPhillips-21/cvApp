@@ -64,42 +64,42 @@ const Education = () => {
             <p>End Date: {education.endDate}</p>
           </div>
         ))}
-        <label>Name:</label>
+        <label>Name:</label> <br></br>
         <input
           type="text"
           value={name}
           onChange={(event) => setName(event.target.value)}
         />
         <br />
-        <label>Job Title:</label>
+        <label>Job Title:</label> <br></br>
         <input
           type="text"
           value={title}
           onChange={(event) => setTitle(event.target.value)}
         />
         <br />
-        <label>E-Mail:</label>
+        <label>E-Mail:</label> <br></br>
         <input
           type="text"
           value={email}
           onChange={(event) => setEmail(event.target.value)}
         />
         <br />
-        <label>Phone Number:</label>
+        <label>Phone Number:</label> <br></br>
         <input
           type="text"
           value={number}
           onChange={(event) => setNumber(event.target.value)}
         />
         <br />
-        <label>Start Date:</label>
+        <label>Start Date:</label> <br></br>
         <input
           type="text"
           value={startDate}
           onChange={(event) => setStartDate(event.target.value)}
         />
         <br />
-        <label>End Date:</label>
+        <label>End Date:</label> <br></br>
         <input
           type="text"
           value={endDate}
