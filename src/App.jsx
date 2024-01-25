@@ -8,8 +8,6 @@ import WorkHistory from './components/practical.jsx'
 import Resume from './components/resume.jsx'
 
 function App() {
-  const [sharedState, setSharedState] = useState('');
-
   const [name, setName] = useState('');
   const [title, setTitle] = useState('');
   const [email, setEmail] = useState('');
@@ -17,23 +15,29 @@ function App() {
   const [location, setLocation] = useState('');
   const [status, setStatus] = useState(false);
 
+  const [educations, setEducations] = useState([]);
+  const [school, setSchool] = useState('');
+  const [degree, setDegree] = useState('');
+  const [schoolLocation, setSchoolLocation] = useState('');
+  const [startDate, setStartDate] = useState('');
+  const [endDate, setEndDate] = useState('');
+
   return (
     <>
-    <p>Parent Component State: {sharedState}</p>
     <div className="papa-container">
     <div className="app-container">
       <div className="section">
         <GeneralInfo location={location} setLocation={setLocation} name={name} setName={setName} title={title} setTitle={setTitle} email={email} setEmail={setEmail} number={number} setNumber={setNumber} status={status} setStatus={setStatus} />
       </div>
       <div className="section">
-        <EducationHistory />
+        <EducationHistory educations={educations} setEducations={setEducations} school={school} setSchool={setSchool} degree={degree} setDegree={setDegree} schoolLocation={schoolLocation} setSchoolLocation={setSchoolLocation} startDate={startDate} setStartDate={setStartDate} endDate={endDate} setEndDate={setEndDate} />
       </div>
       <div className="section">
         <WorkHistory />
       </div>
     </div>
     <div className="resume-container">
-      <Resume location={location} setLocation={setLocation} name={name} setName={setName} title={title} setTitle={setTitle} email={email} setEmail={setEmail} number={number} setNumber={setNumber} status={status} setStatus={setStatus} />
+      <Resume location={location} name={name} title={title} email={email} number={number} status={status} educations={educations} school={school} degree={degree} schoolLocation={schoolLocation} startDate={startDate} endDate={endDate} />
     </div>
     </div>
     </>

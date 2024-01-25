@@ -1,5 +1,4 @@
-import React from 'react';
-import { useState } from 'react'
+import React, { useState } from 'react';
 function GeneralInfo({ location, setLocation, name, setName, title, setTitle, email, setEmail, number, setNumber, status, setStatus }) {
     return (<>
     <h3>General Information:</h3>

@@ -1,60 +1,10 @@
 import React, { useState } from 'react';
 
-const Education = () => {
-  const [educations, setEducations] = useState([]);
-  const [name, setName] = useState('');
-  const [title, setTitle] = useState('');
-  const [email, setEmail] = useState('');
-  const [number, setNumber] = useState('');
-  const [startDate, setStartDate] = useState('');
-  const [endDate, setEndDate] = useState('');
-  const [status, setStatus] = useState(0);
-
-  const addEducation = () => {
-    setEducations([
-      ...educations,
-      { name, title, email, number, startDate, endDate }
-    ]);
-    setName('');
-    setTitle('');
-    setEmail('');
-    setNumber('');
-    setStartDate('');
-    setEndDate('');
-    setStatus(1);
-  };
-
-  const addMore = () => {
-    setStatus(0);
-  };
-
-  const remove = (key) => {
-    let newEducations = [...educations];
-    newEducations.splice(key, 1);
-    setEducations(newEducations);
-  };
-
-  if (status >= 1) {
+function EducationHistory({ educations, setEducations, school, setSchool, degree, setDegree, schoolLocation, setSchoolLocation, startDate, setStartDate, endDate, setEndDate })
+{
     return (
       <>
-        {educations.map((education, index) => (
-          <div key={index}>
-            <h3>{education.name}</h3>
-            <p>{education.title}</p>
-            <p>{education.email}</p>
-            <p>{education.number}</p>
-            <p>Start Date: {education.startDate}</p>
-            <p>End Date: {education.endDate}</p>
-            <button onClick={() => remove(index)}>Delete</button>
-          </div>
-        ))}
-        <button onClick={addMore}>Add More Education</button>
-      </>
-    );
-  } else {
-    return (
-      <>
-        {educations.map((education, index) => (
+        {/* {educations.map((education, index) => (
           <div key={index}>
             <h3>{education.name}</h3>
             <p>{education.title}</p>
@@ -63,33 +13,26 @@ const Education = () => {
             <p>Start Date: {education.startDate}</p>
             <p>End Date: {education.endDate}</p>
           </div>
-        ))}
-        <label>Name:</label> <br></br>
+        ))} */}
+        <label>School Name:</label> <br></br>
         <input
           type="text"
-          value={name}
-          onChange={(event) => setName(event.target.value)}
+          value={school}
+          onChange={(event) => setSchool(event.target.value)}
         />
         <br />
-        <label>Job Title:</label> <br></br>
+        <label>Degree Title:</label> <br></br>
         <input
           type="text"
-          value={title}
-          onChange={(event) => setTitle(event.target.value)}
+          value={degree}
+          onChange={(event) => setDegree(event.target.value)}
         />
         <br />
-        <label>E-Mail:</label> <br></br>
+        <label>School Location:</label> <br></br>
         <input
           type="text"
-          value={email}
-          onChange={(event) => setEmail(event.target.value)}
-        />
-        <br />
-        <label>Phone Number:</label> <br></br>
-        <input
-          type="text"
-          value={number}
-          onChange={(event) => setNumber(event.target.value)}
+          value={schoolLocation}
+          onChange={(event) => setSchoolLocation(event.target.value)}
         />
         <br />
         <label>Start Date:</label> <br></br>
@@ -106,19 +49,60 @@ const Education = () => {
           onChange={(event) => setEndDate(event.target.value)}
         />
         <br />
-        <button onClick={addEducation}>Submit Education</button>
+        {/* <button onClick={addEducation}>Add Education</button> */}
       </>
     );
-  }
-};
+      }
 
-const EducationHistory = () => {
-  return (
-    <>
-      <h3>Education History</h3>
-      <Education />
-    </>
-  );
-};
+
 
 export default EducationHistory;
+
+// const EducationHistory = () => {
+//   return (
+//     <>
+//       <h3>Education History</h3>
+//       <Education />
+//     </>
+//   );
+// };
+  // const addEducation = () => {
+  //   setEducations([
+  //     ...educations,
+  //     { school, degree, schoolLocation, startDate, endDate }
+  //   ]);
+  //   setSchool('');
+  //   setDegree('');
+  //   setSchoolLocation('');
+  //   setStartDate('');
+  //   setEndDate('');
+  // };
+
+  // const addMore = () => {
+  //   setStatus(0);
+  // };
+
+  // const remove = (key) => {
+  //   let newEducations = [...educations];
+  //   newEducations.splice(key, 1);
+  //   setEducations(newEducations);
+  // };
+
+  // if (status >= 1) {
+  //   return (
+  //     <>
+  //       {educations.map((education, index) => (
+  //         <div key={index}>
+  //           <h3>{education.name}</h3>
+  //           <p>{education.title}</p>
+  //           <p>{education.email}</p>
+  //           <p>{education.number}</p>
+  //           <p>Start Date: {education.startDate}</p>
+  //           <p>End Date: {education.endDate}</p>
+  //           <button onClick={() => remove(index)}>Delete</button>
+  //         </div>
+  //       ))}
+  //       <button onClick={addMore}>Add More Education</button>
+  //     </>
+  //   );
+  // } else {
