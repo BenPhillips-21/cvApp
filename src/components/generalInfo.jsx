@@ -13,6 +13,7 @@ function GeneralInfo() {
 
     if (status === false) {
     return (<>
+    <h3>General Information:</h3>
     <label>Name:</label>
       <input
           type="text"

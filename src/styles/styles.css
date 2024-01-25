@@ -1,0 +1,25 @@
+.papa-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    width: 40vw; /* 100% of viewport width */
+  }
+  
+  .section {
+    flex: 1; /* Each section takes up equal height */
+    padding: 20px; /* Optional padding for each section */
+    box-sizing: border-box;
+  }
+
+
+  .resume-container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    width: 60vw; /* 100% of viewport width */
+}
+
+  
