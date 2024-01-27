@@ -1,18 +1,27 @@
 import React, { useState } from 'react';
-const Work = () => {
+
+function WorkHistory({ works, setWorks, business, setBusiness, jobTitle, setJobTitle, responsibilities, setResponsibilities, startWorkDate, setStartWorkDate, endWorkDate, setEndWorkDate, workStatus, setWorkStatus }) {
 
   const addWork = () => {
-    setWorks([...works, { business, jobTitle, responsibilities, startDate, endDate }]);
+    const newWork = {
+      id: business,
+      business,
+      jobTitle,
+      responsibilities,
+      startWorkDate,
+      endWorkDate
+    }
+    setWorks([...works, newWork]);
     setBusiness('');
     setJobTitle('');
     setResponsibilities('');
-    setStartDate('');
-    setEndDate('');
-    setStatus(1);
+    setStartWorkDate('');
+    setEndWorkDate('');
+    setWorkStatus(0);
   };
 
   const addMore = () => {
-    setStatus(0);
+    setWorkStatus(1);
   };
 
   const remove = (key) => {
@@ -21,34 +30,41 @@ const Work = () => {
     setWorks(newWorks);
   };
 
-  if (status >= 1) {
+  const editWork = (id) => {
+    console.log(id)
+
+    const targetWork = works.find((work) => work.id === id);
+  
+    if (targetWork) {
+      setBusiness(targetWork.business);
+      setJobTitle(targetWork.jobTitle);
+      setResponsibilities(targetWork.responsibilities);
+      setStartWorkDate(targetWork.workStartDate);
+      setEndWorkDate(targetWork.workEndDate);
+  
+      setWorks((prevWorks) =>
+        prevWorks.filter((work) => work.id !== id)
+      );
+  
+      setWorkStatus(1); 
+    }
+  }
+
+  if (workStatus === 0) {
     return (
       <>
-        {works.map((work, index) => (
-          <div key={index}>
-            <h3>{work.business}</h3>
-            <p>{work.jobTitle}</p>
-            <p>{work.responsibilities}</p>
-            <p>Start Date: {work.startDate}</p>
-            <p>End Date: {work.endDate}</p>
+        {works.map((work) => (
+          <div key={work.id}>
+            <button onClick={() => editWork(work.id)}>{work.business}</button>
             <button onClick={() => remove(index)}>Delete</button>
           </div>
         ))}
-        <button onClick={addMore}>Add More Work</button>
+        <button onClick={addMore}>+ Work</button>
       </>
     );
-  } else {
+  } else if (workStatus === 1) {
     return (
       <>
-        {works.map((work, index) => (
-          <div key={index}>
-            <h3>{work.business}</h3>
-            <p>{work.jobTitle}</p>
-            <p>{work.responsibilities}</p>
-            <p>Start Date: {work.startDate}</p>
-            <p>End Date: {work.endDate}</p>
-          </div>
-        ))}
         <label>Business:</label> <br></br>
         <input
           type="text"
@@ -73,32 +89,24 @@ const Work = () => {
         <label>Start Date:</label> <br></br>
         <input
           type="text"
-          value={startDate}
-          onChange={(event) => setStartDate(event.target.value)}
+          value={startWorkDate}
+          onChange={(event) => setStartWorkDate(event.target.value)}
         />
         <br />
         <label>End Date:</label> <br></br>
         <input
           type="text"
-          value={endDate}
-          onChange={(event) => setEndDate(event.target.value)}
+          value={endWorkDate}
+          onChange={(event) => setEndWorkDate(event.target.value)}
         />
         <br />
         <button onClick={addWork}>Submit Work</button>
       </>
     );
   }
-};
-
-const WorkHistory = () => {
-  return (
-    <>
-      <h3>Work History</h3>
-      <Work />
-    </>
-  );
-};
+}
 
 export default WorkHistory;
+
 
 
