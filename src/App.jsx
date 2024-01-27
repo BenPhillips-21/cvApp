@@ -22,7 +22,14 @@ function App() {
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
   const [state, setState] = useState(0);
-  const [edit, setEdit] = useState()
+
+  // const [works, setWorks] = useState([]);
+  // const [business, setBusiness] = useState('');
+  // const [jobTitle, setJobTitle] = useState('');
+  // const [responsibilities, setResponsibilities] = useState('');
+  // const [startDate, setStartDate] = useState('');
+  // const [endDate, setEndDate] = useState('');
+  // const [status, setStatus] = useState(0);
 
   return (
     <>
@@ -32,14 +39,14 @@ function App() {
         <GeneralInfo location={location} setLocation={setLocation} name={name} setName={setName} title={title} setTitle={setTitle} email={email} setEmail={setEmail} number={number} setNumber={setNumber} status={status} setStatus={setStatus} />
       </div>
       <div className="section">
-        <EducationHistory edit={edit} setEdit={setEdit} state={state} setState={setState} educations={educations} setEducations={setEducations} school={school} setSchool={setSchool} degree={degree} setDegree={setDegree} schoolLocation={schoolLocation} setSchoolLocation={setSchoolLocation} startDate={startDate} setStartDate={setStartDate} endDate={endDate} setEndDate={setEndDate} />
+        <EducationHistory setState={setState} educations={educations} setEducations={setEducations} school={school} setSchool={setSchool} degree={degree} setDegree={setDegree} schoolLocation={schoolLocation} setSchoolLocation={setSchoolLocation} startDate={startDate} setStartDate={setStartDate} endDate={endDate} setEndDate={setEndDate} />
       </div>
       <div className="section">
         <WorkHistory />
       </div>
     </div>
     <div className="resume-container">
-      <Resume edit={edit} state={state} location={location} name={name} title={title} email={email} number={number} status={status} educations={educations} school={school} degree={degree} schoolLocation={schoolLocation} startDate={startDate} endDate={endDate} state={state} />
+      <Resume location={location} name={name} title={title} email={email} number={number} status={status} educations={educations} school={school} degree={degree} schoolLocation={schoolLocation} startDate={startDate} endDate={endDate} state={state} />
     </div>
     </div>
     </>

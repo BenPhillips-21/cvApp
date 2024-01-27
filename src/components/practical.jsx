@@ -1,12 +1,5 @@
 import React, { useState } from 'react';
 const Work = () => {
-  const [works, setWorks] = useState([]);
-  const [business, setBusiness] = useState('');
-  const [jobTitle, setJobTitle] = useState('');
-  const [responsibilities, setResponsibilities] = useState('');
-  const [startDate, setStartDate] = useState('');
-  const [endDate, setEndDate] = useState('');
-  const [status, setStatus] = useState(0);
 
   const addWork = () => {
     setWorks([...works, { business, jobTitle, responsibilities, startDate, endDate }]);
