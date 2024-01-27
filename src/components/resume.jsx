@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import GeneralInfo from './generalInfo';
 import '../styles/resumeStyles.css'
 
-export default function Resume({ location, name, title, email, number, educations, school, degree, schoolLocation, startDate, endDate }) {
-
-  return (
+export default function Resume({ edit, state, location, name, title, email, number, educations, school, degree, schoolLocation, startDate, endDate }) {
+    return (
     <>
     <div>
         <div className = 'chungus'>
@@ -21,11 +20,20 @@ export default function Resume({ location, name, title, email, number, education
     </div>
     <div className = 'education-container'>
         <h1>Education</h1>
-            <p>{school}</p>
-            <p>{degree}</p>
-            <p>{schoolLocation}</p>
-            <p>{startDate}</p>
-            <p>{endDate}</p>
+        {educations.map((education, index) => (
+        <div key={index}>
+            <h3>{education.school}</h3>
+                {/* <p>{education.degree}</p>
+                <p>{education.schoolLocation}</p>
+                <p>Start Date: {education.startDate}</p>
+                <p>End Date: {education.endDate}</p> */}
+        </div>
+        ))}
+        <p>{school}</p>
+        {/* <p>{degree}</p>
+        <p>{schoolLocation}</p>
+        <p>{startDate}</p>
+        <p>{endDate}</p> */}
     </div>
     {/* <div className = 'workhistory-container'>
         <h1>Professional Experience</h1>
@@ -33,3 +41,4 @@ export default function Resume({ location, name, title, email, number, education
     </>
     );
 }
+
