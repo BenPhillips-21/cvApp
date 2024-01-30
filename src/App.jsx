@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import React, { useRef, useState } from 'react';
+import generatePDF from 'react-to-pdf';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './styles/styles.css';
@@ -12,6 +13,8 @@ import Colour from './components/changeColour.jsx';
 import Font from './components/changeFont.jsx';
 import { Helmet } from 'react-helmet';
 function App() {
+  const targetRef = useRef();
+
   const [name, setName] = useState('Benjamin Phillips');
   const [title, setTitle] = useState('Junior Software Developer');
   const [email, setEmail] = useState('pben012@gmail.com');
@@ -102,6 +105,9 @@ function App() {
                 />
               </div>
               <div className="section">
+              <button style={{ fontWeight: 'bold' }} onClick={() => generatePDF(targetRef, {filename: 'page.pdf'})}>Download PDF</button>
+              </div>
+              <div className="section">
                 <GeneralInfo
                   location={location}
                   setLocation={setLocation}
@@ -157,7 +163,7 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="resume-container">
+          <div ref={targetRef} className="resume-container">
             <Resume
               font={font}
               colour={colour}
@@ -253,7 +259,7 @@ function App() {
                 </div>
             </div>
           </div>
-          <div className="resume-container">
+          <div ref={targetRef} className="resume-container">
             <Resume
               font={font}
               colour={colour}
