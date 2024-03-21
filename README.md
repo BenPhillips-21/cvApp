@@ -1,8 +1,25 @@
-# React + Vite
+🚀 Introducing my 'Résumé Generator' Project
+I'm happy to share this dynamic and customizable CV application built with React.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+✏️ Editable Information
+One of the key features of the CV app is its user-friendly interface that allows you to easily edit all the information on your CV including personal information, work experience and education history.
 
-Currently, two official plugins are available:
+🎨 Customizable Styles
+The app lets you customize the color scheme and fonts used in your CV.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+📄 Convert to PDF
+With a single click, transform your digital CV into a professional PDF document. Share it effortlessly with potential employers or save it for future reference.
+
+⚙️ Under the Hood
+By employing useState, the application seamlessly manages and updates its state, ensuring a smooth and dynamic user experience. This allows for real-time edits and updates as users modify their CV information. Using React's component-based architecture, each section of the CV is encapsulated into modular components.
+
+🛠️ Tech Stack
+- React
+- HTML
+- CSS
+
+🌐 Deployment & Git Repo
+The app is deployed here on Vercel: https://lnkd.in/gyvZACCB
+The Code: https://lnkd.in/g6-b6fy8
+
+Note: This is a desktop-only app.
