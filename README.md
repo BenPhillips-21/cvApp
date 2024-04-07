@@ -19,7 +19,7 @@ By employing useState, the application seamlessly manages and updates its state,
 - CSS
 
 🌐 Deployment & Git Repo
-The app is deployed here on Vercel: https://lnkd.in/gyvZACCB
+The app is deployed here on Vercel: https://cv-app-rouge.vercel.app/
 The Code: https://lnkd.in/g6-b6fy8
 
 Note: This is a desktop-only app.
