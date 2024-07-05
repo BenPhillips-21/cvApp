@@ -1,3 +1,5 @@
+Visit the App: https://cv-app-rouge.vercel.app/
+
 🚀 Introducing my 'Résumé Generator' Project
 I'm happy to share this dynamic and customizable CV application built with React.
 
@@ -17,9 +19,5 @@ By employing useState, the application seamlessly manages and updates its state,
 - React
 - HTML
 - CSS
-
-🌐 Deployment & Git Repo
-The app is deployed here on Vercel: https://cv-app-rouge.vercel.app/
-The Code: https://lnkd.in/g6-b6fy8
 
 Note: This is a desktop-only app.
